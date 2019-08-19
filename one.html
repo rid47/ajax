@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    // $("#div1").load("test.txt",function (responseTxt,statusTxt,xhr){
+    //   // console.log(responseTxt);
+    //   if(statusTxt == "success"){
+    //
+    //     alert("Loaded successfully!");
+    //   }else{
+    //
+    //     alert("Error: "+ xhr.status + ":" + "statusTxt");
+    //   }
+    //
+    // });
+  //   $.get("user.json",function(data,status){
+  //
+  //     console.log(data[0].name)
+  //   });
+  //
+  // });
+
+  $.ajax({
+                        url: 'user.json',
+
+                        dataType: 'json',
+                        success: function (data) {
+                          console.log(data[0].name);
+
+
+
+                        }
+                    })
+})})
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>Text will go here...</h2></div>
+
+<button>Get External Content</button>
+
+</body>
+</html>
