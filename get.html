@@ -24,15 +24,23 @@ $(document).ready(function(){
   // });
 
   $.ajax({
+                        type: 'GET',//default is GET; you need not to specify if it is GET
                         url: 'user.json',
 
                         dataType: 'json',
                         success: function (data) {
-                          console.log(data[0].name);
+                          console.log(data.name);
+                          // console.log(data);
 
 
 
-                        }
+                        },
+                        error: function (jqXhr, textStatus, errorMessage)
+                        {
+                        console.log('Error: ' + errorMessage);
+                        // console.log(textStatus);
+                        // console.log(jqXhr);
+    }
                     })
 })})
 </script>
